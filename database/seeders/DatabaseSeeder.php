@@ -16,5 +16,5 @@ class DatabaseSeeder extends Seeder
         User::factory()->create(['email'=>"admin@gmail.com"]);
 
         User::factory(19)->hasPosts(4)->create();
-    }
+    } //v
 }
