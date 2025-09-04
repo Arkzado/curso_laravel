@@ -1,7 +1,8 @@
 <nav x-data="{ open: false }">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end">
-        <div class="flex justify-between h-16">
+        <div class="flex my-4">
+            <x-nav-link href="/">Home</x-nav-link>
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
@@ -22,6 +23,23 @@
                     </x-slot>
 
                     <x-slot name="content">
+
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
+                    </x-slot>
+
+                    <x-slot name="content">
+                        <x-dropdown-link :href="route('dashboard', ['for-my' => true])">
+                            {{ __('My posts') }}
+                        </x-dropdown-link>
+
+
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
