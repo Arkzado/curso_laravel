@@ -1,5 +1,11 @@
 <x-app-layout>
     <x-container>
+        <form action="" class="px-4 mb-8">
+            <textarea name="body" id="" rows="2"
+                class="w-full mb-2 text-white bg-transparent border-0 border-b-2 border-slate-800 focus:border-b-slate-700 focus:ring-0 overflow-hidden resize-none"></textarea>
+            <input type="submit">
+        </form>
+
         @foreach ($posts as $post)
         <a href="" class="px-6 mb-2 flex items-center fap-2 font-medium text-slate-100">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
